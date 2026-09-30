@@ -1,8 +1,0 @@
-name: CD
-on:
-  pull_request:
-    branches: ["master"]
-
-  permissions:
-    content: read
-
