@@ -3,8 +3,8 @@ on:
   push:
     branches: ["master"]
 
-  permissions:
-    content: read
+permissions:
+  contents: read
 
 env:
   DOTNET_VERSION: "10.0.x"
@@ -28,7 +28,15 @@ jobs:
       run: dotnet restore ${{ env.SOLUTION_PATH }}
 
     - name: Build
-      run: dotnet build ${{ env.SOLUTION_PATH }} --no-restore --configuration Release
+      run: |
+        dotnet build ${{ env.SOLUTION_PATH }} \
+          --no-restore \
+          --configuration Release
 
     - name: Test
-      run: dotnet test ${{ env.SOLUTION_PATH }} --no-build --verbosity detailed --configuration Release --no-restore
+      run: |
+        dotnet test ${{ env.SOLUTION_PATH }} \
+          --no-build \
+          --verbosity detailed \
+          --configuration Release \
+          --no-restore
