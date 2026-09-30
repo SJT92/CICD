@@ -6,7 +6,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: "CICD"
+  IMAGE_NAME: "cicd"
   GITHUB_ACTOR: "sjt92"
 
 jobs:
